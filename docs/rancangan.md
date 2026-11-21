@@ -12,7 +12,7 @@ Atribut:
 - kodeFilm : String
 - judul : String
 - genre : String
-- durasiMenit :int
+- durasiMenit : int
 - hargaTiket : double
 - sedangTayang : boolean
 
