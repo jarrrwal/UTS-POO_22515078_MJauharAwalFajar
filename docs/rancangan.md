@@ -70,12 +70,12 @@ Atribut:
 - sudahDibayar : boolean
 
 Method perilaku:
-- hitungTotalHarga() : mengambil harga dari film dan menyimpannya ke totalHarga
-- labelKursi() : mengubah baris dan kolom menjadi teks, misalnya "B5" (String)
-- konfirmasi() : meminta Studio menandai kursi terisi, status jadi DIKONFIRMASI
-- tolak() : mengubah status menjadi DITOLAK
-- bayar() : void
-- tampilkanInfo() : menampilkan data tiket di layar
+- hitungTotalHarga() : double, mengambil harga dari film dan menyimpannya ke totalHarga
+- labelKursi() : String, mengubah baris dan kolom menjadi teks, misalnya "B5"
+- konfirmasi() : boolean, meminta Studio menandai kursi terisi, status jadi DIKONFIRMASI
+- tolak() : void, mengubah status menjadi DITOLAK
+- bayar() : void, mengubah sudahDibayar menjadi true
+- tampilkanInfo() : void, menampilkan data tiket di layar
 
 Konstruktor:
 - Tiket() : default
