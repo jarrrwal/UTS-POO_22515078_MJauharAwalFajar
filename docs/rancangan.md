@@ -98,13 +98,14 @@ Atribut:
 - buka : boolean
 
 Method perilaku:
-- tambahFilm(Film film) : menambah film, menolak kode film yang sama
-- tambahStudio(Studio studio) : menambah studio, menolak jika melebihi batas
-- cariFilm(String kataKunci) : mencari film berdasarkan kode atau judul
-- buatTiket(...) : membuat Tiket berstatus MENUNGGU lalu memasukkannya ke antrian
-- prosesAntrian() : mengambil tiket terdepan dari antrian lalu memanggil konfirmasi()
-- hitungTotalPendapatan() : menjumlahkan totalHarga semua tiket berstatus DIKONFIRMASI (double)
-- tampilkanRingkasan() : jumlah film, studio, tiket, dan total pendapatan
+- tambahFilm(Film film) : boolean, menolak kode film yang sama
+- tambahStudio(Studio studio) : boolean, menolak jika melebihi batas
+- cariFilm(String kataKunci) : Film, mencari berdasarkan kode atau judul
+- cariStudio(String kodeStudio) : Studio, mencari studio berdasarkan kode
+- buatTiket(String namaPemesan, String kodeFilm, String kodeStudio, int baris, int kolom) : Tiket, membuat Tiket berstatus MENUNGGU lalu memasukkannya ke antrian
+- prosesAntrian() : boolean, mengambil tiket terdepan dari antrian lalu memanggil konfirmasi()
+- hitungTotalPendapatan() : double, menjumlahkan totalHarga tiket berstatus DIKONFIRMASI
+- tampilkanRingkasan() : void, menampilkan jumlah film, studio, tiket, dan total pendapatan
 
 Konstruktor:
 - Bioskop() : default
