@@ -42,11 +42,11 @@ Atribut:
 - aktif : boolean
 
 Method perilaku:
-- hitungKapasitas() : mengembalikan jumlahBaris x jumlahKolom (int)
-- cekKursiTersedia(int baris, int kolom) : true jika kursi masih kosong
-- pesanKursi(int baris, int kolom) : menandai kursi terisi, gagal jika kursi sudah terisi
-- hitungKursiKosong() : jumlah kursi yang masih kosong (int)
-- tampilkanDenahKursi() : menampilkan denah kursi di layar
+- hitungKapasitas() : int, mengembalikan jumlahBaris x jumlahKolom
+- cekKursiTersedia(int baris, int kolom) : boolean, true jika kursi masih kosong
+- pesanKursi(int baris, int kolom) : boolean, menandai kursi terisi, false jika kursi sudah terisi
+- hitungKursiKosong() : int, jumlah kursi yang masih kosong
+- tampilkanDenahKursi() : void, menampilkan denah kursi di layar
 
 Konstruktor:
 - Studio() : default
