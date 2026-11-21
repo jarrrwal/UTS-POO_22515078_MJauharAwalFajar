@@ -141,9 +141,11 @@ Atribut (private):
 - bioskop : Bioskop
 - input : Scanner
 
-Method:
+Method publik:
 - main(String[] args) : titik awal program
 - jalankan() : void, perulangan menu sampai pengguna memilih keluar
+
+Method private:
 - tampilkanMenu() : void, mencetak 7 pilihan menu
 - bacaInt(String pesan) : int, mengulang sampai input angka valid
 - bacaDouble(String pesan) : double, mengulang sampai input angka valid
