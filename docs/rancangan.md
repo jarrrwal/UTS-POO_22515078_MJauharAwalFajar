@@ -17,9 +17,9 @@ Atribut:
 - sedangTayang : boolean
 
 Method perilaku:
-- tampilkanInfo() : menampilkan data film di layar
-- ubahStatusTayang(boolean status) : mengubah film jadi tayang / tidak tayang
-- hitungDurasiJam() : mengubah durasi menit menjadi jam (double)
+- tampilkanInfo() : void, menampilkan data film di layar
+- ubahStatusTayang(boolean status) : void, mengubah film jadi tayang / tidak tayang
+- hitungDurasiJam() : double, mengubah durasi menit menjadi jam 
 
 Konstruktor:
 - Film() : default
