@@ -67,6 +67,7 @@ Atribut:
 - kolomKursi : int
 - totalHarga : double
 - status : String (MENUNGGU, DIKONFIRMASI, atau DITOLAK)
+- sudahDibayar : boolean
 
 Method perilaku:
 - hitungTotalHarga() : mengambil harga dari film dan menyimpannya ke totalHarga
