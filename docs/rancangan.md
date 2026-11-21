@@ -111,3 +111,40 @@ Konstruktor:
 Validasi di setter:
 - namaBioskop tidak boleh kosong
 - jumlahStudioMaks harus lebih dari 0
+
+## AntrianTiket:
+Atribut (Semua Private):
+- daftarTiket : ArrayList<Tiket>
+- kapasitas(int)
+
+Operasi ublik:
+- enqueue(Tiket tiket) : boolean
+- dequeue() : Tiket
+- front() : Tiket
+- isEmpty() : boolean
+- isFull() : boolean
+- size() : int
+- tampilkanIsi() : menampilkan isi antrean dari depan ke belakang
+
+Konstruktor:
+- AntrianTiket() : default (kapasitas bawaan, misalnya 10)
+- AntrianTiket(int kapasitas)
+
+Validasi:
+- kapasitas harus lebih dari 0
+
+## MenuBioskop
+Atribut (private):
+- bioskop : Bioskop
+- input : Scanner
+
+Method:
+- main(String[] args) : titik awal program
+- jalankan() : perulangan menu sampai pengguna memilih keluar
+- tampilkanMenu() : mencetak 7 pilihan menu
+- bacaInt(String pesan) : double (mengulang sampai valid)
+- bacaTeks(String pesan) : String (mengulang sampai tidak kosong)
+- menuFilm(), menuStudio(), menuBuatTiket(), menuCari(), menuAntrian(), menuLaporan() : satu method per menu
+
+Konstruktor:
+- MenuBioskop() : membuat objek Bioskop dan Scanner
