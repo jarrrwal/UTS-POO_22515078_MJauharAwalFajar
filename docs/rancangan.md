@@ -117,7 +117,7 @@ Validasi di setter:
 ## AntrianTiket
 Atribut (Semua Private):
 - daftarTiket : ArrayList<Tiket>
-- kapasitas(int)
+- kapasitas : int 
 
 Operasi publik:
 - enqueue(Tiket tiket) : boolean
