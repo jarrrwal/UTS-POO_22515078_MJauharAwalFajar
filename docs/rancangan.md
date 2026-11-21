@@ -74,6 +74,7 @@ Method perilaku:
 - labelKursi() : mengubah baris dan kolom menjadi teks, misalnya "B5" (String)
 - konfirmasi() : meminta Studio menandai kursi terisi, status jadi DIKONFIRMASI
 - tolak() : mengubah status menjadi DITOLAK
+- bayar() : void
 - tampilkanInfo() : menampilkan data tiket di layar
 
 Konstruktor:
