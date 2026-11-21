@@ -114,7 +114,7 @@ Validasi di setter:
 - namaBioskop tidak boleh kosong
 - jumlahStudioMaks harus lebih dari 0
 
-## AntrianTiket:
+## AntrianTiket
 Atribut (Semua Private):
 - daftarTiket : ArrayList<Tiket>
 - kapasitas(int)
