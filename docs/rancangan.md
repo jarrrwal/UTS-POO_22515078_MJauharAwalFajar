@@ -127,7 +127,7 @@ Operasi publik:
 - isEmpty() : boolean
 - isFull() : boolean
 - size() : int
-- tampilkanIsi() : menampilkan isi antrean dari depan ke belakang
+- tampilkanIsi() : void, menampilkan isi antrean dari depan ke belakang
 
 Konstruktor:
 - AntrianTiket() : default (kapasitas bawaan, misalnya 10)
@@ -143,11 +143,12 @@ Atribut (private):
 
 Method:
 - main(String[] args) : titik awal program
-- jalankan() : perulangan menu sampai pengguna memilih keluar
-- tampilkanMenu() : mencetak 7 pilihan menu
-- bacaInt(String pesan) : double (mengulang sampai valid)
-- bacaTeks(String pesan) : String (mengulang sampai tidak kosong)
-- menuFilm(), menuStudio(), menuBuatTiket(), menuCari(), menuAntrian(), menuLaporan() : satu method per menu
+- jalankan() : void, perulangan menu sampai pengguna memilih keluar
+- tampilkanMenu() : void, mencetak 7 pilihan menu
+- bacaInt(String pesan) : int, mengulang sampai input angka valid
+- bacaDouble(String pesan) : double, mengulang sampai input angka valid
+- bacaTeks(String pesan) : String, mengulang sampai tidak kosong
+- menuFilm(), menuStudio(), menuBuatTiket(), menuCari(), menuAntrian(), menuLaporan() : void, satu method per menu
 
 Konstruktor:
 - MenuBioskop() : membuat objek Bioskop dan Scanner
