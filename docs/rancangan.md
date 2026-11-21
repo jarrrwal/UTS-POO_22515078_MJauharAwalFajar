@@ -7,7 +7,7 @@
 5. AntrianTiket (ADT Queue)
 6. MenuBioskop (Main/menu)
 
-## FIlm
+## Film
 Atribut:
 - kodeFilm : String
 - judul : String
