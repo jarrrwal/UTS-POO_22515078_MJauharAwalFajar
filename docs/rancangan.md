@@ -119,7 +119,7 @@ Atribut (Semua Private):
 - daftarTiket : ArrayList<Tiket>
 - kapasitas(int)
 
-Operasi ublik:
+Operasi publik:
 - enqueue(Tiket tiket) : boolean
 - dequeue() : Tiket
 - front() : Tiket
