@@ -84,4 +84,36 @@ public class Film {
     public void setSedangTayang(boolean sedangTayang) {
         this.sedangTayang = sedangTayang;
     }
+
+    //===== Method perilaku =====
+
+    /**
+     * Menampilkan data film di layar
+     */
+    public void tampilkanInfo() {
+        System.out.println("Kode Film   : " + kodeFilm);
+        System.out.println("Judul       : " + judul);
+        System.out.println("Genre       : " + genre);
+        System.out.println("Durasi      : " + durasiMenit + " menit (" + hitungDurasiJam() + " jam)");
+        System.out.println("Harga Tiket : Rp" + hargaTiket);
+        System.out.println("Status      : " + (sedangTayang ? "Sedang tayang" : "Tidak tayang"));
+    }
+
+    /**
+     * Mengubah status film menjadi sedang tayang atau tidak tayang.
+     *
+     * @param status true jika film sedang tayang, false jika tidak
+     */
+    public void ubahStatusTayang(boolean status) {
+        this.sedangTayang = status;
+    }
+
+    /**
+     * Mengubah durasi dari menit menjadi jam.
+     *
+     * @return durasi film dalam jam (bilangan desimal)
+     */
+    public double hitungDurasiJam() {
+        return durasiMenit / 60.0;
+    }
 }
