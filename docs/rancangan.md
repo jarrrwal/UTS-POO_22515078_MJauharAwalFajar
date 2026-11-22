@@ -170,3 +170,7 @@ Konstruktor:
 - bayar() dan tolak() punya pengaman status (hanya tiket yang sudah dikonfirmasi yang bisa dibayar, dan tiket yang sudah dikonfirmasi tidak bisa ditolak). Ini hanya mengatur isi method, nama dan tipe kembalian sama dengan diagram.
 - totalHarga tidak punya setter, karena nilainya dihitung oleh hitungTotalHarga().
 - Ada method public tambahan isDikonfirmasi() : boolean yang tidak digambar di diagram. Dipakai Bioskop saat menghitung pendapatan, supaya konstanta status tidak perlu dibuka ke luar class.
+
+### AntrianTiket
+- Ada konstanta private static final KAPASITAS_BAWAAN = 10 untuk konstruktor default. Konstanta tidak digambar di diagram.
+- Ada getKapasitas() dan setKapasitas(int) dengan validasi (kapasitas harus lebih dari 0 dan tidak boleh lebih kecil dari jumlah tiket yang sedang antre). Getter dan setter tidak digambar di diagram, sama seperti class lain.
