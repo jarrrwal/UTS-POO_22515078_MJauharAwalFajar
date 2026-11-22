@@ -94,4 +94,95 @@ public class Studio {
     public void setAktif(boolean aktif) {
         this.aktif = aktif;
     }
+
+    // ===== Method perilaku =====
+    /**
+     * Menghitung kapasitas studio
+     *
+     * @return jumlah baris x jumlah kolom
+     */
+    public int hitungKapasitas() {
+        return jumlahBaris * jumlahKolom;
+    }
+
+    /**
+     * Memeriksa apakah sebuah kursi masih kosong.
+     * Nomor baris dan kolom dimulai dari 1.
+     *
+     * @return true jika posisi valid dan kursi masih kosong.
+     */
+    public boolean cekKursiTersedia(int baris, int kolom) {
+        if (!posisiValid(baris, kolom)) {
+            return false;
+        }
+        return !kursiTerisi[baris - 1][kolom - 1];
+    }
+
+    /**
+     * Memesan kursi: menandainya sebagai terisi.
+     * Aturan bisnis: kursi yang sudah terisi tidak bisa dipesan lagi,
+     * dan posisi harus berada di dalam kapasitas studio.
+     *
+     * @return true jika berhasil, false jika gagal (pesan kesalah dicetak)
+     */
+    public boolean pesanKursi(int baris, int kolom) {
+        if (!posisiValid(baris, kolom)) {
+            System.out.println("Gagal: kursi baris " + baris + ", kolom " + kolom
+                    + " di luar kapasitas studio (" + jumlahBaris + " baris x "
+                    + jumlahKolom + " kolom).");
+            return false;
+        }
+        if (kursiTerisi[baris - 1][kolom - 1]) {
+            System.out.println("Gagal: kursi " + labelKursi(baris, kolom) + " sudah terisi.");
+            return false;
+        }
+        kursiTerisi[baris - 1][kolom - 1] = true;
+        return true;
+    }
+
+    /**
+     * Menghitung jumlah kursi yang masih kosong.
+     */
+    public int hitungKursiKosong() {
+        if (kursiTerisi == null) {
+            return 0;
+        }
+        int kosong = 0;
+        for (int i = 0; i < jumlahBaris; i++) {
+            for (int j = 0; j < jumlahKolom; j++) {
+                if (!kursiTerisi[i][j]) {
+                    kosong++;
+                }
+            }
+        }
+        return kosong;
+    }
+
+    /**
+     * Menampilkan denah kursi di layar. Baris diberi huruf (1=A, 2=B, dst)
+     */
+    public void tampilkanDenahKursi() {
+        if (kursiTerisi == null) {
+            System.out.println("Denah kursi belum tersedia.");
+            return;
+        }
+        System.out.println("Denah " + namaStudio + " ([ ] = kosong, [X] = terisi)");
+        System.out.println("            LAYAR");
+        System.out.print("   ");
+        for (int j = 1; j <= jumlahKolom; j++) {
+            System.out.printf("%3d ", j);
+        }
+        System.out.println();
+        for (int i = 0; i < jumlahBaris; i++) {
+            System.out.print((char) ('A' + i) + "  ");
+            for (int j = 0; j < jumlahKolom; j++) {
+                System.out.print(kursiTerisi[i][j] ? "[X] " : "[ ] ");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     *
+     */
 }
