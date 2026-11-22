@@ -22,4 +22,17 @@ public class Studio {
     public Studio() {
         this.aktif = true;
     }
+
+    /**
+     * Konstruktor berparameter: membuat studio beserta denah kursinya.
+     * Nama dan ukuran dikirim lewat setter supaya validasi tetap berjalan.
+     */
+    public Studio(String kodeStudio, String namaStudio, String jenisStudio, int jumlahBaris, int jumlahKolom) {
+        this.kodeStudio = kodeStudio;
+        this.jenisStudio = jenisStudio;
+        setNamaStudio(namaStudio);
+        setJumlahBaris(jumlahBaris);
+        setJumlahKolom(jumlahKolom);
+        this.aktif = true;
+    }
 }
