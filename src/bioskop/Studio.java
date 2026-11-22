@@ -35,4 +35,63 @@ public class Studio {
         setJumlahKolom(jumlahKolom);
         this.aktif = true;
     }
+
+    // ===== Getter dan Setter =====
+
+    public String getKodeStudio() {
+        return kodeStudio;
+    }
+
+    public void setKodeStudio(String kodeStudio) {
+        this.kodeStudio = kodeStudio;
+    }
+
+    public String getNamaStudio() {
+        return namaStudio;
+    }
+
+    public void setNamaStudio(String namaStudio) {
+        // Validasi: nama tidak boleh null atau kosong
+        if (namaStudio == null || namaStudio.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nama studio tidak boleh kosong.");
+        }
+        this.namaStudio = namaStudio.trim();
+    }
+
+    public String getJenisStudio() {
+        return jenisStudio;
+    }
+
+    public void setJenisStudio(String jenisStudio) {
+        this.jenisStudio = jenisStudio;
+    }
+
+    public int getJumlahBaris() {
+        return jumlahBaris;
+    }
+
+    public void setJumlahBaris(int jumlahBaris) {
+        // Validasi: 1 sampai 26 baris (label bisa memakai huruf A-Z)
+        if (jumlahBaris <= 0 || jumlahBaris > 26) {
+            throw new IllegalArgumentException("Jumlah baris harus antara 1 sampai 26.");
+        }
+        this.jumlahBaris = jumlahBaris;
+        buatUlangDenah();
+    }
+
+    public Film getFilmDiputar() {
+        return filmDiputar;
+    }
+
+    public void setFilmDiputar(Film filmDiputar) {
+        this.filmDiputar = filmDiputar;
+    }
+
+    public boolean isAktif() {
+        return aktif;
+    }
+
+    public void setAktif(boolean aktif) {
+        this.aktif = aktif;
+    }
 }
