@@ -181,3 +181,8 @@ Konstruktor:
 - Kode tiket dibuat otomatis oleh buatTiket() dengan format TKT-001, TKT-002, dan seterusnya.
 - buatTiket() memeriksa aturan tambahan di dalam method: bioskop harus buka, film harus sedang tayang, studio harus aktif, studio yang sudah memutar film tertentu hanya menerima tiket film itu, dan kursi harus tersedia dan berada dalam kapasitas. Ini mengatur isi method, nama dan tipe kembalian sama dengan diagram.
 - Studio digambar sebagai komposisi, tetapi di kode objek Studio dibuat di luar lalu didaftarkan lewat tambahStudio().
+
+### MenuBioskop
+- Data awal bioskop dibuat di konstruktor MenuBioskop(): nama "Bioskop Mini Kendari", maksimal 5 studio, kapasitas antrean 5 (kecil agar antrean penuh mudah diuji).
+- Tiap method menu memuat submenu dan beberapa aksi tambahan di dalamnya (ubah status tayang film, atur film yang diputar di studio, cari tiket, bayar tiket). Nama method, parameter, dan tipe kembalian sama dengan diagram.
+- Pembacaan input memakai nextLine() lalu parseInt atau parseDouble, dan nilai NaN atau Infinity ditolak secara khusus pada bacaDouble().
