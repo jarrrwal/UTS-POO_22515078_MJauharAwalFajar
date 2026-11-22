@@ -21,4 +21,29 @@ public class Tiket {
     private double totalHarga;
     private String status;
     private boolean sudahDibayar;
+
+    /**
+     * Konstruktor default: tiket kosong bersttus MENUNGGU dan belum dibayar.
+     */
+    public Tiket() {
+        this.status = STATUS_MENUNGGU;
+        this.sudahDibayar = false;
+    }
+
+    /**
+     * Konstruktor berparameter: membuat tiket berstatus MENUNGGU.
+     * Nilai yang punya aturan dikirim lewat setter supaya validsi tetap berjalan.
+     */
+    public Tiket(String kodeTiket, String namaPemesan, Film film, Studio studio,
+                 int barisKursi, int kolomKursi) {
+        this.kodeTiket = kodeTiket;
+        setNamaPemesan(namaPemesan);
+        setFilm(film);
+        setStudio(studio);
+        setBarisKursi(barisKursi);
+        setKolomKursi(kolomKursi);
+        this.status = STATUS_MENUNGGU;
+        this.sudahDibayar = false;
+        hitungTotalHarga();
+    }
 }
