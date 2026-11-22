@@ -7,4 +7,18 @@ package bioskop;
  */
 
 public class Tiket {
+    // Konstanta status (private karena hanya dipakai di dalam class ini)
+    private static final String STATUS_MENUNGGU = "MENUNGGU";
+    private static final String STATUS_DIKONFIRMASI = "DIKONFIRMASI";
+    private static final String STATUS_DITOLAK = "DITOLAK";
+
+    private String kodeTiket;
+    private String namaPemesan;
+    private Film film;
+    private Studio studio;
+    private int barisKursi;
+    private int kolomKursi;
+    private double totalHarga;
+    private String status;
+    private boolean sudahDibayar;
 }
