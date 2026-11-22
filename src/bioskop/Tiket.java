@@ -127,7 +127,7 @@ public class Tiket {
 
     public void setStatus(String status) {
         // Validasi: status hanya boleh salah satu dari tiga nilai
-        if (status = null
+        if (status == null
                 || !(status.equals(STATUS_MENUNGGU)
                 || status.equals(STATUS_DIKONFIRMASI)
                 || status.equals(STATUS_DITOLAK))) {
@@ -143,5 +143,112 @@ public class Tiket {
 
     public void setSudahDibayar(boolean sudahDibayar) {
         this.sudahDibayar = sudahDibayar;
+    }
+
+    // ===== Method perilaku =====
+
+    /**
+     * Menghitung total harga dari harga tiket film, lalu menyimpannya ke totalHarga.
+     *
+     * @return total harga tiket
+     */
+    public double hitungTotalHarga() {
+        if (film == null) {
+            totalHarga = 0;
+        } else {
+            totalHarga = film.getHargaTiket();
+        }
+        return totalHarga;
+    }
+
+    /**
+     * Mengubah baris dan kolom menjadi label kursi, misalnya baris 2 kolom 5 menjadi "B5".
+     *
+     * @return label kursi, atau "-" jika kursi belum diisi
+     */
+    public String labelKursi() {
+        if (barisKursi <= 0 || kolomKursi <= 0) {
+            return "-";
+        }
+        return (char) ('A' + barisKursi - 1) + String.valueOf(kolomKursi);
+    }
+
+    /**
+     * Mengonfirmasi tiket: meminta Studio menandai kursi sebagai terisi.
+     * Jika kursi sudah terisi atau di luar kapasitas, tiket ditolak.
+     *
+     * @return true jika tiket berhasil dikonfirmasi, false jika gagal
+     */
+    public boolean konfirmasi() {
+        if (!status.equals(STATUS_MENUNGGU)) {
+            System.out.println("Tiket " + kodeTiket
+                    + " tidak bisa dikonfirmasi karena statusnya " + status + ".");
+            return false;
+        }
+        if (studio == null || film == null) {
+            System.out.println("Tiket " + kodeTiket + " belum memiliki film atau studio.");
+            tolak();
+            return false;
+        }
+        // Aturan bisnis kursi (sudah terisi / di luar kapasitas) dijalankan oleh studio
+        if (studio.pesanKursi(barisKursi, kolomKursi)) {
+            this.status = STATUS_DIKONFIRMASI;
+            return true;
+        }
+        System.out.println("Tiket " + kodeTiket + " ditolak.");
+        tolak();
+        return false;
+    }
+
+    /**
+     * Menolak tiket dengan mengubah statusnya menjadi DITOLAK.
+     * Tiket yang sudah dikonfirmasi tidak bisa ditolak.
+     */
+    public void tolak() {
+        if (status.equals(STATUS_DIKONFIRMASI)) {
+            System.out.println("Tiket " + kodeTiket + " sudah dikonfirmasi, tidak bisa ditolak.");
+            return;
+        }
+        this.status = STATUS_DITOLAK;
+    }
+
+    /**
+     * Menandai tiket sudah dibayar. Hanya tiket berstatus DIKONFIRMASI yang bisa dibayar.
+     */
+    public void bayar() {
+        if (!status.equals(STATUS_DIKONFIRMASI)) {
+            System.out.println("Tiket " + kodeTiket
+                    + " belum dikonfirmasi, tidak bisa dibayar.");
+            return;
+        }
+        if (sudahDibayar) {
+            System.out.println("Tiket " + kodeTiket + " sudah dibayar sebelumnya.");
+            return;
+        }
+        this.sudahDibayar = true;
+    }
+
+    /**
+     * Menampilkan data tiket di layar.
+     */
+    public void tampilkanInfo() {
+        System.out.println("Kode Tiket  : " + kodeTiket);
+        System.out.println("Pemesan     : " + namaPemesan);
+        System.out.println("Film        : " + (film != null ? film.getJudul() : "-"));
+        System.out.println("Studio      : " + (studio != null ? studio.getNamaStudio() : "-"));
+        System.out.println("Kursi       : " + labelKursi());
+        System.out.println("Total Harga : Rp" + totalHarga);
+        System.out.println("Status      : " + status);
+        System.out.println("Pembayaran  : " + (sudahDibayar ? "Sudah dibayar" : "Belum dibayar"));
+    }
+
+    /**
+     * Memeriksa apakah tiket sudah dikonfirmasi.
+     * Dipakai class lain (misalnya Bioskop) tanpa membuka konstanta status.
+     *
+     * @return true jika statusnya DIKONFIRMASI
+     */
+    public boolean isDikonfirmasi() {
+        return status.equals(STATUS_DIKONFIRMASI);
     }
 }
