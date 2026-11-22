@@ -154,3 +154,18 @@ Method private:
 
 Konstruktor:
 - MenuBioskop() : membuat objek Bioskop dan Scanner
+
+## Catatan Penyimpangan dari Diagram (untuk Bab 3)
+
+### Studio
+- Ada tiga method private pembantu yang tidak digambar di diagram:
+  - buatUlangDenah() : membuat denah kursi baru saat ukuran studio berubah
+  - posisiValid(baris, kolom) : memeriksa apakah posisi berada di dalam kapasitas
+  - labelKursi(baris, kolom) : mengubah posisi kursi menjadi label, misalnya "B5"
+- jumlahBaris dibatasi maksimal 26, karena label baris memakai huruf A sampai Z.
+- Atribut kursiTerisi tidak punya getter, supaya isi kursi hanya bisa diubah lewat pesanKursi() (enkapsulasi).
+
+### Tiket
+- Ada tiga konstanta status (private static final): STATUS_MENUNGGU, STATUS_DIKONFIRMASI, STATUS_DITOLAK. Konstanta tidak digambar di diagram.
+- bayar() dan tolak() punya pengaman status (hanya tiket yang sudah dikonfirmasi yang bisa dibayar, dan tiket yang sudah dikonfirmasi tidak bisa ditolak). Ini hanya mengatur isi method, nama dan tipe kembalian sama dengan diagram.
+- totalHarga tidak punya setter, karena nilainya dihitung oleh hitungTotalHarga().
