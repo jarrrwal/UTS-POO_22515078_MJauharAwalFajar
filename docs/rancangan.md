@@ -169,3 +169,4 @@ Konstruktor:
 - Ada tiga konstanta status (private static final): STATUS_MENUNGGU, STATUS_DIKONFIRMASI, STATUS_DITOLAK. Konstanta tidak digambar di diagram.
 - bayar() dan tolak() punya pengaman status (hanya tiket yang sudah dikonfirmasi yang bisa dibayar, dan tiket yang sudah dikonfirmasi tidak bisa ditolak). Ini hanya mengatur isi method, nama dan tipe kembalian sama dengan diagram.
 - totalHarga tidak punya setter, karena nilainya dihitung oleh hitungTotalHarga().
+- Ada method public tambahan isDikonfirmasi() : boolean yang tidak digambar di diagram. Dipakai Bioskop saat menghitung pendapatan, supaya konstanta status tidak perlu dibuka ke luar class.
