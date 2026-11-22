@@ -15,4 +15,11 @@ public class Studio {
     private boolean[][] kursiTerisi;
     private Film filmDiputar;
     private boolean aktif;
+
+    /**
+     * Konstruktor default: studio kosong,denah kursi dibuat setelah ukuran diisi.
+     */
+    public Studio() {
+        this.aktif = true;
+    }
 }
