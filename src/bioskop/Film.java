@@ -1,5 +1,11 @@
 package bioskop;
 
+/**
+ * Class Film merepresentasikan sebuah film yang diputar di bioskop.
+ * Menyimpan data film, memvalidasi nilainya lewat setter,
+ * dan menyediakan perilaku untuk menampilkan info serta menghitung durasi.
+ */
+
 public class Film {
     private String kodeFilm;
     private String judul;
