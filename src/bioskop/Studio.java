@@ -182,7 +182,23 @@ public class Studio {
         }
     }
 
-    /**
-     *
-     */
+    // ===== Method pembantu (private) =====
+    /** Membuat denah kursi baru (semua kosong) jika ukuran sudah lengkap. */
+    private void buatUlangDenah() {
+        if (jumlahBaris > 0 && jumlahKolom > 0) {
+            kursiTerisi = new boolean[jumlahBaris][jumlahKolom];
+        }
+    }
+
+    /** Memeriksa apakah baris dan kolom berada di dalam kapasitas studio. */
+    private boolean posisiValid(int baris, int kolom) {
+        return kursiTerisi != null
+                && baris >= 1 && baris <= jumlahBaris
+                && kolom >= 1 && kolom <= jumlahKolom;
+    }
+
+    /** Mengubah baris dan kolom menjadi label, misalnya baris 2 kolom 5 menjadi "B5". */
+    private String labelKursi(int baris, int kolom) {
+        return (char) ('A' + baris - 1) + String.valueOf(kolom);
+    }
 }
