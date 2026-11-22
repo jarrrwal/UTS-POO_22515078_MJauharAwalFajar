@@ -79,6 +79,19 @@ public class Studio {
         buatUlangDenah();
     }
 
+    public int getJumlahKolom() {
+        return jumlahKolom;
+    }
+
+    public void setJumlahKolom(int jumlahKolom) {
+        // Validasi: jumlah kolom harus lebih dari 0
+        if (jumlahKolom <= 0) {
+            throw new IllegalArgumentException("Jumlah kolom harus lebih dari 0.");
+        }
+        this.jumlahKolom = jumlahKolom;
+        buatUlangDenah();
+    }
+
     public Film getFilmDiputar() {
         return filmDiputar;
     }
