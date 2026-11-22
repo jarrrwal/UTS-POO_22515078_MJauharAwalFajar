@@ -46,4 +46,102 @@ public class Tiket {
         this.sudahDibayar = false;
         hitungTotalHarga();
     }
+
+    // ===== Getter dan Setter =====
+
+    public String getKodeTiket() {
+        return kodeTiket;
+    }
+
+    public void setKodeTiket(String kodeTiket) {
+        this.kodeTiket = kodeTiket;
+    }
+
+    public String getNamaPemesan() {
+        return namaPemesan;
+    }
+
+    public void setNamaPemesan(String namaPemesan) {
+        // Validasi: nama pemesan tidak boleh null atau kosong
+        if (namaPemesan == null || namaPemesan.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nama pemesan tidak boleh kosong.");
+        }
+        this.namaPemesan = namaPemesan.trim();
+    }
+
+    public Film getFilm() {
+        return film;
+    }
+
+    public void setFilm(Film film) {
+        // Validasi: tiket harus mengacu ke sebuah film
+        if (film == null) {
+            throw new IllegalArgumentException("Film pada tiket tidak boleh kosong.");
+        }
+        this.film = film;
+    }
+
+    public Studio getStudio() {
+        return studio;
+    }
+
+    public void setStudio(Studio studio) {
+        // Validasi: tiket harus mengacu ke sebuah studio
+        if (studio == null) {
+            throw new IllegalArgumentException("Studio pada tiket tidak boleh kosong.");
+        }
+        this.studio = studio;
+    }
+
+    public int getBarisKursi() {
+        return barisKursi;
+    }
+
+    public void setBarisKursi(int barisKursi) {
+        // Validasi: nomor baris harus lebih dari 0
+        if (barisKursi <= 0) {
+            throw new IllegalArgumentException("Nomor baris kursi harus lebih dari 0.");
+        }
+        this.barisKursi = barisKursi;
+    }
+
+    public int getKolomKursi() {
+        return kolomKursi;
+    }
+
+    public void setKolomKursi(int kolomKursi) {
+        // Validasi: nomor kolom harus lebih dari 0
+        if (kolomKursi <= 0) {
+            throw new IllegalArgumentException("Nomor kolom kursi harus lebih dari 0.");
+        }
+        this.kolomKursi = kolomKursi;
+    }
+
+    public double getTotalHarga() {
+        return totalHarga;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        // Validasi: status hanya boleh salah satu dari tiga nilai
+        if (status = null
+                || !(status.equals(STATUS_MENUNGGU)
+                || status.equals(STATUS_DIKONFIRMASI)
+                || status.equals(STATUS_DITOLAK))) {
+            throw new IllegalArgumentException(
+                    "Status harus MENUNGGU, DIKONFIRMASI, atau DITOLAK.");
+        }
+        this.status = status;
+    }
+
+    public boolean isSudahDibayar() {
+        return sudahDibayar;
+    }
+
+    public void setSudahDibayar(boolean sudahDibayar) {
+        this.sudahDibayar = sudahDibayar;
+    }
 }
