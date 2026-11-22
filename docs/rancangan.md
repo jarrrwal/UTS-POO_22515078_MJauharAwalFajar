@@ -174,3 +174,10 @@ Konstruktor:
 ### AntrianTiket
 - Ada konstanta private static final KAPASITAS_BAWAAN = 10 untuk konstruktor default. Konstanta tidak digambar di diagram.
 - Ada getKapasitas() dan setKapasitas(int) dengan validasi (kapasitas harus lebih dari 0 dan tidak boleh lebih kecil dari jumlah tiket yang sedang antre). Getter dan setter tidak digambar di diagram, sama seperti class lain.
+
+### Bioskop
+- Ada konstanta private static final JUMLAH_STUDIO_MAKS_BAWAAN = 5 untuk konstruktor default. Konstanta tidak digambar di diagram.
+- Ada getter dan setter yang tidak digambar di diagram. getDaftarFilm(), getDaftarStudio(), dan getDaftarTiket() mengembalikan salinan daftar supaya daftar asli tidak bisa diubah dari luar. getAntrian() mengembalikan antrean agar menu bisa memakai operasi ADT-nya.
+- Kode tiket dibuat otomatis oleh buatTiket() dengan format TKT-001, TKT-002, dan seterusnya.
+- buatTiket() memeriksa aturan tambahan di dalam method: bioskop harus buka, film harus sedang tayang, studio harus aktif, studio yang sudah memutar film tertentu hanya menerima tiket film itu, dan kursi harus tersedia dan berada dalam kapasitas. Ini mengatur isi method, nama dan tipe kembalian sama dengan diagram.
+- Studio digambar sebagai komposisi, tetapi di kode objek Studio dibuat di luar lalu didaftarkan lewat tambahStudio().
