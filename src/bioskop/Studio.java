@@ -7,4 +7,12 @@ package bioskop;
  */
 
 public class Studio {
+    private String kodeStudio;
+    private String namaStudio;
+    private String jenisStudio;
+    private int jumlahBaris;
+    private int jumlahKolom;
+    private boolean[][] kursiTerisi;
+    private Film filmDiputar;
+    private boolean aktif;
 }
