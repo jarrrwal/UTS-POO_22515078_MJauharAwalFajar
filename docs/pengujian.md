@@ -16,3 +16,8 @@
 | 12 | Nilai kosong | Menu 3: nama pemesan dikosongkan | Pesan input tidak boleh kosong, lalu diminta ulang | Muncul "Input tidak boleh kosong." lalu diminta ulang | Lulus |
 | 13 | Antrean penuh | 5 tiket tanpa diproses, lalu tiket ke-6 | Pesan antrean penuh (kapasitas 5) | Muncul "Gagal: antrean penuh (kapasitas 5)." | Lulus |
 | 14 | Cek status antrean | Menu 5 > 5 | Antrean penuh: ya, jumlah 5 dari kapasitas 5 | Muncul "Antrean penuh : ya" dan "Jumlah tiket : 5 dari kapasitas 5" | Lulus |
+
+## Bukti Screenshot
+
+### Skenario 1: Tambah film valid
+![Skenario 1](../pengujian/01-tambah-film.png)
